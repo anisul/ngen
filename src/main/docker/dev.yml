@@ -1,0 +1,10 @@
+ngen-dev-postgresql:
+  container_name: ngen-dev-postgresql
+  image: postgres:9.4.5
+  # volumes:
+  #   - ~/volumes/jhipster/ngen/dev-postgresql/:/var/lib/postgresql/
+  environment:
+    - POSTGRES_USER=ngen
+    - POSTGRES_PASSWORD=
+  ports:
+    - "5432:5432"

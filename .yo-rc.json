@@ -1,0 +1,24 @@
+{
+  "generator-jhipster": {
+    "baseName": "ngen",
+    "packageName": "com.grasshopper.ngen",
+    "packageFolder": "com/grasshopper/ngen",
+    "authenticationType": "session",
+    "hibernateCache": "no",
+    "clusteredHttpSession": "no",
+    "websocket": "no",
+    "databaseType": "sql",
+    "devDatabaseType": "postgresql",
+    "prodDatabaseType": "postgresql",
+    "searchEngine": "no",
+    "useSass": false,
+    "buildTool": "maven",
+    "frontendBuilder": "gulp",
+    "enableTranslation": true,
+    "enableSocialSignIn": false,
+    "rememberMeKey": "52893898fb538ee5232f9824131e70031d66d3cd",
+    "testFrameworks": [
+      "gatling"
+    ]
+  }
+}
