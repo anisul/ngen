@@ -1,0 +1,59 @@
+{
+    "relationships": [
+        {
+            "relationshipId": 1,
+            "relationshipName": "deals",
+            "otherEntityName": "deals",
+            "relationshipType": "one-to-many",
+            "otherEntityRelationshipName": "restaurant"
+        }
+    ],
+    "fields": [
+        {
+            "fieldId": 1,
+            "fieldName": "name",
+            "fieldType": "String",
+            "fieldValidateRules": []
+        },
+        {
+            "fieldId": 2,
+            "fieldName": "address",
+            "fieldType": "String"
+        },
+        {
+            "fieldId": 3,
+            "fieldName": "phone",
+            "fieldType": "String"
+        },
+        {
+            "fieldId": 4,
+            "fieldName": "verified",
+            "fieldType": "Boolean"
+        },
+        {
+            "fieldId": 5,
+            "fieldName": "bannerFile",
+            "fieldType": "String"
+        },
+        {
+            "fieldId": 6,
+            "fieldName": "about",
+            "fieldType": "String"
+        },
+        {
+            "fieldId": 7,
+            "fieldName": "category",
+            "fieldType": "RestaurantType",
+            "fieldValues": "Chinese, Thai, Indian, Arabian"
+        },
+        {
+            "fieldId": 8,
+            "fieldName": "gmapCode",
+            "fieldType": "String"
+        }
+    ],
+    "changelogDate": "20160409110300",
+    "dto": "no",
+    "service": "serviceImpl",
+    "pagination": "pagination"
+}

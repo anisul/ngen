@@ -1,0 +1,71 @@
+<div>
+    <h2 translate="ngenApp.deals.home.title">Dealss</h2>
+    <jh-alert></jh-alert>
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-xs-4 no-padding-left">
+                <button class="btn btn-primary" ui-sref="deals.new" >
+                    <span class="glyphicon glyphicon-plus"></span>
+                    <span 
+                        translate="ngenApp.deals.home.createLabel">Create new Deals
+                    </span>
+                </button>
+            </div>
+        </div>
+    </div>
+    <br/>
+    <div class="table-responsive">
+        <table class="jh-table table table-striped">
+            <thead>
+                <tr jh-sort="predicate" ascending="reverse" callback="loadAll()">
+                    <th jh-sort-by="id"><span translate="global.field.id">ID</span> <span class="glyphicon glyphicon-sort"></span></th>
+                    <th jh-sort-by="title"><span translate="ngenApp.deals.title">Title</span> <span class="glyphicon glyphicon-sort"></span></th>
+                    <th jh-sort-by="description"><span translate="ngenApp.deals.description">Description</span> <span class="glyphicon glyphicon-sort"></span></th>
+                    <th jh-sort-by="startDate"><span translate="ngenApp.deals.startDate">StartDate</span> <span class="glyphicon glyphicon-sort"></span></th>
+                    <th jh-sort-by="endDate"><span translate="ngenApp.deals.endDate">EndDate</span> <span class="glyphicon glyphicon-sort"></span></th>
+                    <th jh-sort-by="note"><span translate="ngenApp.deals.note">Note</span> <span class="glyphicon glyphicon-sort"></span></th>
+                    <th jh-sort-by="restaurant.id"><span translate="ngenApp.deals.restaurant">restaurant</span> <span class="glyphicon glyphicon-sort"></span></th>
+                    <th></th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr ng-repeat="deals in dealss track by deals.id">
+                    <td><a ui-sref="deals.detail({id:deals.id})">{{deals.id}}</a></td>
+                    <td>{{deals.title}}</td>
+                    <td>{{deals.description}}</td>
+                        <td>{{deals.startDate | date:'mediumDate'}}</td>
+                        <td>{{deals.endDate | date:'mediumDate'}}</td>
+                    <td>{{deals.note}}</td>
+                    <td>
+                        <a ui-sref="restaurant.detail({id:deals.restaurant.id})">{{deals.restaurant.id}}</a>
+                    </td>
+                    <td class="text-right">
+                        <div class="btn-group flex-btn-group-container">
+                            <button type="submit"
+                                    ui-sref="deals.detail({id:deals.id})"
+                                    class="btn btn-info btn-sm"> 
+                                <span class="glyphicon glyphicon-eye-open"></span>
+                                <span class="hidden-xs hidden-sm" translate="entity.action.view"></span>
+                            </button>
+                            <button type="submit"
+                                    ui-sref="deals.edit({id:deals.id})"
+                                    class="btn btn-primary btn-sm">
+                                <span class="glyphicon glyphicon-pencil"></span>
+                                <span class="hidden-xs hidden-sm" translate="entity.action.edit"></span>
+                            </button>
+                            <button type="submit"
+                                    ui-sref="deals.delete({id:deals.id})"
+                                    class="btn btn-danger btn-sm">                                    
+                                <span class="glyphicon glyphicon-remove-circle"></span>
+                                <span class="hidden-xs hidden-sm" translate="entity.action.delete"></span>
+                            </button>
+                        </div>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+    <div class="text-center">
+        <uib-pagination class="pagination-sm" total-items="totalItems" ng-model="page" ng-change="loadAll()"></uib-pagination>
+    </div>
+</div>

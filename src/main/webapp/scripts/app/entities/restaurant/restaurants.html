@@ -1,0 +1,73 @@
+<div>
+    <h2 translate="ngenApp.restaurant.home.title">Restaurants</h2>
+    <jh-alert></jh-alert>
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-xs-4 no-padding-left">
+                <button class="btn btn-primary" ui-sref="restaurant.new" >
+                    <span class="glyphicon glyphicon-plus"></span>
+                    <span 
+                        translate="ngenApp.restaurant.home.createLabel">Create new Restaurant
+                    </span>
+                </button>
+            </div>
+        </div>
+    </div>
+    <br/>
+    <div class="table-responsive">
+        <table class="jh-table table table-striped">
+            <thead>
+                <tr jh-sort="predicate" ascending="reverse" callback="loadAll()">
+                    <th jh-sort-by="id"><span translate="global.field.id">ID</span> <span class="glyphicon glyphicon-sort"></span></th>
+                    <th jh-sort-by="name"><span translate="ngenApp.restaurant.name">Name</span> <span class="glyphicon glyphicon-sort"></span></th>
+                    <th jh-sort-by="address"><span translate="ngenApp.restaurant.address">Address</span> <span class="glyphicon glyphicon-sort"></span></th>
+                    <th jh-sort-by="phone"><span translate="ngenApp.restaurant.phone">Phone</span> <span class="glyphicon glyphicon-sort"></span></th>
+                    <th jh-sort-by="verified"><span translate="ngenApp.restaurant.verified">Verified</span> <span class="glyphicon glyphicon-sort"></span></th>
+                    <th jh-sort-by="bannerFile"><span translate="ngenApp.restaurant.bannerFile">BannerFile</span> <span class="glyphicon glyphicon-sort"></span></th>
+                    <th jh-sort-by="about"><span translate="ngenApp.restaurant.about">About</span> <span class="glyphicon glyphicon-sort"></span></th>
+                    <th jh-sort-by="category"><span translate="ngenApp.restaurant.category">Category</span> <span class="glyphicon glyphicon-sort"></span></th>
+                    <th jh-sort-by="gmapCode"><span translate="ngenApp.restaurant.gmapCode">GmapCode</span> <span class="glyphicon glyphicon-sort"></span></th>
+                    <th></th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr ng-repeat="restaurant in restaurants track by restaurant.id">
+                    <td><a ui-sref="restaurant.detail({id:restaurant.id})">{{restaurant.id}}</a></td>
+                    <td>{{restaurant.name}}</td>
+                    <td>{{restaurant.address}}</td>
+                    <td>{{restaurant.phone}}</td>
+                    <td>{{restaurant.verified}}</td>
+                    <td>{{restaurant.bannerFile}}</td>
+                    <td>{{restaurant.about}}</td>
+                    <td translate="{{'ngenApp.RestaurantType.' + restaurant.category}}">{{restaurant.category}}</td>
+                    <td>{{restaurant.gmapCode}}</td>
+                    <td class="text-right">
+                        <div class="btn-group flex-btn-group-container">
+                            <button type="submit"
+                                    ui-sref="restaurant.detail({id:restaurant.id})"
+                                    class="btn btn-info btn-sm"> 
+                                <span class="glyphicon glyphicon-eye-open"></span>
+                                <span class="hidden-xs hidden-sm" translate="entity.action.view"></span>
+                            </button>
+                            <button type="submit"
+                                    ui-sref="restaurant.edit({id:restaurant.id})"
+                                    class="btn btn-primary btn-sm">
+                                <span class="glyphicon glyphicon-pencil"></span>
+                                <span class="hidden-xs hidden-sm" translate="entity.action.edit"></span>
+                            </button>
+                            <button type="submit"
+                                    ui-sref="restaurant.delete({id:restaurant.id})"
+                                    class="btn btn-danger btn-sm">                                    
+                                <span class="glyphicon glyphicon-remove-circle"></span>
+                                <span class="hidden-xs hidden-sm" translate="entity.action.delete"></span>
+                            </button>
+                        </div>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+    <div class="text-center">
+        <uib-pagination class="pagination-sm" total-items="totalItems" ng-model="page" ng-change="loadAll()"></uib-pagination>
+    </div>
+</div>

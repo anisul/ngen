@@ -1,0 +1,11 @@
+{
+    "ngenApp": {
+        "RestaurantType" : {
+            "null": "",
+            "Chinese": "Chinese",
+            "Thai": "Thai",
+            "Indian": "Indian",
+            "Arabian": "Arabian"
+        }
+    }
+}

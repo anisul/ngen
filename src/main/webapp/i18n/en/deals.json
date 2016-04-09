@@ -1,0 +1,27 @@
+{
+    "ngenApp": {
+        "deals" : {
+            "home": {
+                "title": "Dealss",
+                "createLabel": "Create a new Deals",
+                "createOrEditLabel": "Create or edit a Deals",
+                "search": "Search for Deals"
+            },
+            "created": "A new Deals is created with identifier {{ param }}",
+            "updated": "A Deals is updated with identifier {{ param }}",
+            "deleted": "A Deals is deleted with identifier {{ param }}",
+            "delete": {
+                "question": "Are you sure you want to delete Deals {{ id }}?"
+            },
+            "detail": {
+                "title": "Deals"
+            },
+            "title": "Title",
+            "description": "Description",
+            "startDate": "StartDate",
+            "endDate": "EndDate",
+            "note": "Note",
+            "restaurant": "Restaurant"
+        }
+    }
+}
